@@ -1,0 +1,25 @@
+/*csslint adjoining-classes: false */
+
+/* remove adjoining classes rule, we won't support ie6.  because really now.  */
+
+
+.ajax-loading {
+    background: url('/images/ajax-loader.gif') no-repeat 50% 50%;
+    background-position: center;
+    z-index: 999;
+}
+/* add a loading indicator */
+
+
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+/* needed for handling Bootstrap bug:  resized navbar overflow with dropdown button */
+
+
+/* fix for IE lacking the hidden attribute - included in html currently, to take advantage of conditional include
+*[hidden] {
+    display: none;
+}
+*/

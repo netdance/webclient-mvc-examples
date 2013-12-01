@@ -1,0 +1,23 @@
+{
+  "name": "Backbone QED Sample App",
+  "version": "0.0.0",
+  "authors": [
+    "Jim Driscoll <jamesgdriscoll@gmail.com>"
+  ],
+  "description": "Sample Application I wrote to learn Backbone",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1",
+    "bootstrap": "~3",
+    "underscore": "~1",
+    "jquery": "~1"
+  }
+}
