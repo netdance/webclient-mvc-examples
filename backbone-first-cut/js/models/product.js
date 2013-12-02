@@ -19,7 +19,7 @@ App.Models.Product = Backbone.Model.extend({
             return 'price must be a number';
         }
         if (attrs.price < 0) {
-            return 'price must be > 0';
+            return 'price must be >= 0';
         }
         return false;
     },
