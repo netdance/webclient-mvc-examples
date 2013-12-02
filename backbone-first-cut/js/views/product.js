@@ -10,9 +10,6 @@ App.Views.Product = Backbone.View.extend({
         this.insert();
     },
     render: function() {
-        var attr = this.model.attributes || 'not set';
-        var name = attr.name;
-        console.log('rendering product '+name);
         this.$el.addClass('row');
         this.$el.html(this.template({
             name: this.model.get('name'),
