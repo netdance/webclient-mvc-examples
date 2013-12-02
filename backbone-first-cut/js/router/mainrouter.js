@@ -59,11 +59,11 @@ App.Routers.Main = Backbone.Router.extend({
             categoryCollection: categoryCollection,
             $container: App.mainAnchor.$el
         });
+        categoryCollection.fetch({
+            reset: true
+        });
         App.mainAnchor.render({
             $child: addProductView
-        });
-        collection.fetch({
-            reset: true
         });
     },
     home: function() {
