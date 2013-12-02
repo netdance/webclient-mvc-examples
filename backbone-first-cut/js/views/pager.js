@@ -5,6 +5,9 @@ App.Views.Pager = Backbone.View.extend({
         'click a.previousPageLink': 'pageBack',
         'click a.nextPageLink': 'pageForward'
     },
+    attributes: {
+        class: 'row'
+    },
     template: _.template($('#template-pager').html()),
     initialize: function (options) {
         "use strict";
