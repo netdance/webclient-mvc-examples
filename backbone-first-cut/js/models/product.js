@@ -15,6 +15,9 @@ App.Models.Product = Backbone.Model.extend({
         if (!attrs.description) {
             return 'need a description';
         }
+        if (!$.isNumeric(attrs.price) || attrs.price === '') {
+            return 'price must be a number';
+        }
         if (attrs.price < 0) {
             return 'price must be > 0';
         }

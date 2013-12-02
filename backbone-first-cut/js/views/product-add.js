@@ -51,12 +51,14 @@ App.Views.ProductAdd = Backbone.View.extend({
     },
     addSuccess: function(){ // model, response, options
         "use strict";
-        App.alert.addAlert('added category successfully','success');
-        this.collection.fetch({reset: 'true'})
+        App.alert.addAlert('added product successfully','success');
+        App.browser.navigate('/products', {
+            trigger: true
+        });
     },
     addError: function() {  // model, xhr, options
         "use strict";
-        App.alert.addAlert('error saving category','error');
+        App.alert.addAlert('error saving product','error');
     }
 
 });
