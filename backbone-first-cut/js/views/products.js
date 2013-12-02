@@ -5,6 +5,9 @@ App.Views.Products = Backbone.View.extend({
     attributes: {
         class: 'container'
     },
+    events: {
+        'click #addProductBtn': 'addProduct'
+    },
     initialize: function (options) {
         "use strict";
         _.bindAll(this, 'render','insert');
@@ -42,5 +45,11 @@ App.Views.Products = Backbone.View.extend({
         console.log('inserting products');
         this.$container.append(this.$el);
         return this;
+    },
+    addProduct: function() {
+        console.log('adding product');
+        App.browser.navigate('/products/add', {
+            trigger: true
+        });
     }
 });

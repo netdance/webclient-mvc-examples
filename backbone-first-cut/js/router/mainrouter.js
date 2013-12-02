@@ -51,10 +51,19 @@ App.Routers.Main = Backbone.Router.extend({
     addProduct: function() {
         console.log('in addProduct router ');
         var collection = new App.Collections.Products({
-
+        });
+        var categoryCollection = new App.Collections.Categories({
         });
         var addProductView = new App.Views.ProductAdd({
-
+            collection: collection,
+            categoryCollection: categoryCollection,
+            $container: App.mainAnchor.$el
+        });
+        App.mainAnchor.render({
+            $child: addProductView
+        });
+        collection.fetch({
+            reset: true
         });
     },
     home: function() {
