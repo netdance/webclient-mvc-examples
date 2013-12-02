@@ -15,7 +15,7 @@
     <title>Backbone Sample Product Catalog</title>
 </head>
 <body>
-<nav id="topnav" class="navbar navbar-default navbar-static-top" role="navigation">
+<nav id="topnav" class="navbar navbar-default navbar-static-top">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -46,41 +46,38 @@
 </div>
 
 <script id="template-landing" type="template">
-    <div id="landingContainer" class="container">
-        <div class="jumbotron">
-            <h1>Welcome!</h1>
+    <div class="jumbotron">
+        <h1>Welcome!</h1>
 
-            <h2>JQProducts</h2>
+        <h2>JQProducts</h2>
 
-            <p class="lead">Managing products since 2013.</p>
-            Want a tuturial?
-            <a class="btn btn-lg btn-success" title="No such luck" data-toggle="popover"
-               data-delay="50" data-trigger="click" data-content="Cut due to budget." role="button">
-                I Love Tutorials!
-            </a>
-        </div>
+        <p class="lead">Managing products since 2013.</p>
+        Want a tuturial?
+        <a class="btn btn-lg btn-success" title="No such luck" data-toggle="popover"
+           data-delay="50" data-trigger="click" data-content="Cut due to budget.">
+            I Love Tutorials!
+        </a>
     </div>
 </script>
 <script id="template-categories" type="template">
     <ul id="categoriesList" class="list-group">
     </ul>
     <a id="addCategoryBtn" class="btn btn-default">Add a category</a>
-    <form role="form">
-                <span id="addCategoryInput" hidden>
-                    <div class="row">
-                        <div class="col-sm-8 col-md-6 col-lg-4">
-                            <div class="input-group">
-                                <input id="newCategoryName" autocomplete="off" type="text" class="form-control"
-                                       placeholder="Enter a new category name">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default">Add</button>
-                                </span>
-                            </div>
+    <form>
+          <span id="addCategoryInput" hidden>
+                <div class="row">
+                    <div class="col-sm-8 col-md-6 col-lg-4">
+                        <div class="input-group">
+                            <input id="newCategoryName" autocomplete="off" type="text" class="form-control"
+                                   placeholder="Enter a new category name">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default">Add</button>
+                            </span>
                         </div>
                     </div>
-                </span>
+                </div>
+          </span>
     </form>
-    </div>
 </script>
 <script id="template-category" type="template">
     <li class="list-group-item"><a href="#products/c<%=id%>"><%-name%></a>
@@ -92,7 +89,7 @@
 <script id="template-pager" type="template">
     <div class="row">
         <ul class="pager pull-left">
-            <li class="previousPage" class="disabled">
+            <li class="previousPage disabled">
                 <a class="previousPageLink">Previous</a>
             </li>
             <li class="nextPage">
@@ -115,45 +112,49 @@
 <script id="template-alert" type="template">
     <div class="alert alert-dismissable <%=type%>">
         <span><%-alertMessage%></span>
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
 </script>
 <script id="template-product-add" type="template">
-        <form id="addForm" role="form">
-            <div class="row">
-                <div class="col-sm-8 col-md-9">
-                    <div class="form-group">
-                        <label for="addProductName">Product Name</label>
-                        <input type="text" class="form-control" id="addProductName" autocomplete="off" placeholder="Enter name">
-                    </div>
-                </div>
-                <div class="col-sm-3 col-md-2">
-                    <div class="form-group">
-                        <label for="addProductPrice">Price</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input class="form-control" type="text" id="addProductPrice" autocomplete="off" placeholder="Enter Price">
-                            <span class="input-group-addon">.00</span>
-                        </div>
-                        <p class="help-block">Enter a whole dollar amount.</p>
-                    </div>
+    <form id="addForm">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                <div class="form-group">
+                    <label for="addProductName">Product Name</label>
+                    <input type="text" class="form-control" id="addProductName" autocomplete="off"
+                           placeholder="Enter name">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="addProductDescription">Description</label>
-                <textarea id="addProductDescription" class="form-control" rows="5" placeholder="Enter Product Description"></textarea>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Categories</div>
-                <div class="panel-body">
-                    <div id="addProductCategories" class="row">
-                        <!-- category checkboxes will be inserted here -->
-                    </div>
-                </div>
-            </div>
+            <div class="col-sm-3 col-md-2">
+                <div class="form-group">
+                    <label for="addProductPrice">Price</label>
 
-            <button type="button" class="btn btn-primary">Submit</button>
-        </form>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input class="form-control" type="text" id="addProductPrice" autocomplete="off"
+                               placeholder="Enter Price">
+                        <span class="input-group-addon">.00</span>
+                    </div>
+                    <p class="help-block">Enter a whole dollar amount.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="addProductDescription">Description</label>
+            <textarea id="addProductDescription" class="form-control" rows="5"
+                      placeholder="Enter Product Description"></textarea>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Categories</div>
+            <div class="panel-body">
+                <div id="addProductCategories" class="row">
+                    <!-- category checkboxes will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary">Submit</button>
+    </form>
 </script>
 </body>
 <script src="js/qedback.js"></script>
