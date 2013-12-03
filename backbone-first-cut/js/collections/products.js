@@ -22,10 +22,6 @@ App.Collections.Products = Backbone.Collection.extend({
         }
         if (options.search) {
             this.search = options.search;
-            /*  todo remove me
-            var sep = options.page ? '&' : '';
-            this.baseurl = this.baseurl + sep + 'q=' + options.search;
-            */
         }
     },
     hasMore: function() {

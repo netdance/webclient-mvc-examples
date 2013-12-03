@@ -1,7 +1,7 @@
 App.Routers.Main = Backbone.Router.extend({
     routes: {
-        'categories(/s:search)(/p:page)': 'categories',
-        'products(/c:cat)(/s:search)(/p:page)': 'products',
+        'categories(/s=:search)(/p:page)': 'categories',
+        'products(/c:cat)(/s=:search)(/p:page)': 'products',
         'products/add': 'addProduct',
         'home': 'home',
         '': 'home'
@@ -27,7 +27,7 @@ App.Routers.Main = Backbone.Router.extend({
             reset: true
         });
     },
-    categories: function(page,search) {
+    categories: function(search,page) {
         console.log('in categories router');
         if (!page || page <1) {
             page = 1;

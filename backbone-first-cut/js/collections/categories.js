@@ -10,6 +10,7 @@ App.Collections.Categories = Backbone.Collection.extend({
         });
     },
     initialize: function(options) {
+        "use strict";
         console.log('initializing Categories collection');
         _.bindAll(this, 'hasMore', 'hasLess', 'goMore', 'goLess', 'url', 'fetchAll');
         if (options.page) {
@@ -17,10 +18,6 @@ App.Collections.Categories = Backbone.Collection.extend({
         }
         if (options.search) {
             this.search = options.search;
-            /*  todo remove me
-             var sep = options.page ? '&' : '';
-             this.baseurl = this.baseurl + sep + 'q=' + options.search;
-             */
         }
     },
     fetchAll: function() {

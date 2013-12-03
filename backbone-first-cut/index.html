@@ -34,6 +34,53 @@
                 <a id="categoryNavLink">Category</a>
             </li>
         </ul>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input id="searchinput" type="text" class="form-control" placeholder="Search">
+            </div>
+            <span id="search-nav-btn-holder">
+                <div id="search-nav-btn" class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Search
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="search-btn search-product">Search Products</a>
+                        </li>
+                        <li>
+                            <a class="search-btn search-category">Search Categories</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span id="search-nav-btn-products" class="btn-group" style="display: none">
+                <div class="btn-group">
+                    <a class="search-btn btn btn-default search-product">Search Products</a>
+                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="search-btn search-category">Search Categories</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span id="search-nav-btn-categories" class="btn-group" style="display: none">
+                <div class="btn-group">
+                    <a class="btn btn-default search-btn search-category">Search Categories</a>
+                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="search-btn search-product">Search Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+        </form>
     </div>
 </nav>
 
@@ -87,14 +134,14 @@
     </li>
 </script>
 <script id="template-pager" type="template">
-        <ul class="pager pull-left">
-            <li class="previousPage disabled">
-                <a class="previousPageLink">Previous</a>
-            </li>
-            <li class="nextPage">
-                <a class="nextPageLink">Next</a>
-            </li>
-        </ul>
+    <ul class="pager pull-left">
+        <li class="previousPage disabled">
+            <a class="previousPageLink">Previous</a>
+        </li>
+        <li class="nextPage">
+            <a class="nextPageLink">Next</a>
+        </li>
+    </ul>
 </script>
 <script id="template-products" type="template">
     <div class="row">
@@ -178,6 +225,7 @@
 <script src="js/collections/categories.js"></script>
 <script src="js/collections/products.js"></script>
 <script src="js/views/navigationbar.js"></script>
+<script src="js/views/navsearch.js"></script>
 <script src="js/views/mainAnchor.js"></script>
 <script src="js/views/landing.js"></script>
 <script src="js/views/alert.js"></script>

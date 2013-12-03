@@ -18,6 +18,7 @@ $(function () {
     console.log('starting main program');
 
     App.navbar = new App.Views.NavigationBar();
+    App.navsearch = new App.Views.NavSearch();
     App.mainAnchor = new App.Views.MainAnchor();
     App.mainAnchor.showLanding();
     App.alert = new App.Views.Alert();
