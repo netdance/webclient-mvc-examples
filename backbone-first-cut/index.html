@@ -108,7 +108,12 @@
 <script id="template-product" type="template">
     <li class="list-group-item col-xs-3"><%-name%></li>
     <li class="list-group-item col-xs-2" style="text-align: right"><%-price%></li>
-    <li class="list-group-item col-xs-7"><%-description%></li>
+    <li class="list-group-item col-xs-6"><%-description%></li>
+    <li class="list-group-item col-xs-1">
+        <span class="hidden-print btn btn-group pull-right">
+            <a class="product-delete-button">delete</a>
+        </span>
+    </li>
 </script>
 <script id="template-alert" type="template">
     <div class="alert alert-dismissable <%=type%>">
@@ -153,7 +158,6 @@
                 </div>
             </div>
         </div>
-
         <button type="button" class="btn btn-primary">Submit</button>
     </form>
 </script>
