@@ -1,6 +1,8 @@
 App.Views.Product = Backbone.View.extend({
     template: _.template($('#template-product').html()),
     $container: null,
+    tagName: 'div',
+    className: '',
     events: {
         'click .product-delete-button': 'deleteProduct'
     },
@@ -13,7 +15,6 @@ App.Views.Product = Backbone.View.extend({
         this.insert();
     },
     render: function() {
-        this.$el.addClass('row');
         this.$el.html(this.template({
             name: this.model.get('name'),
             price: Number(this.model.get('price')).toFixed(2),

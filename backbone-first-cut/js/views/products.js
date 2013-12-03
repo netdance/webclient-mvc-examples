@@ -1,7 +1,8 @@
 App.Views.Products = Backbone.View.extend({
     collection: null,
     $container: null,
-    template: _.template($('#template-products').html()),
+    productAnchorSelector: '#productList',
+    template: $('#template-products').html(),
     attributes: {
         class: 'container'
     },
@@ -20,24 +21,24 @@ App.Views.Products = Backbone.View.extend({
         "use strict";
         console.log('rendering products');
         this.trigger('change');
-        this.$el.html(this.template());
+        this.$el.html(this.template);
         var pagerView = new App.Views.Pager({
             collection: this.collection,
             $container: this.$el
         });
         pagerView.render();
         pagerView.listenTo(this,'change',pagerView.remove);
-        var $container = this.$('#productsList').empty();
-        console.log('emptying container ' + $container.attr('id'));
-        this.collection.each(_.bind(function (product) {
+        var $container = this.$(this.productAnchorSelector);//.empty();
+        var productsView = this;
+        this.collection.each(function (product) {
             console.log('creating/rendering product ' + product.attributes.name);
             var newProdRow = new App.Views.Product({
                 model: product,
                 $container: $container
             });
             newProdRow.render();
-            // newProdRow.listenTo(this,'change',newProdRow.remove);  //todo fixme
-        }),this);
+            newProdRow.listenTo(productsView,'change',newProdRow.remove);
+        });
         return this;
     },
     insert: function() {

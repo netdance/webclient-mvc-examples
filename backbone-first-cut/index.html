@@ -138,23 +138,25 @@
     </ul>
 </script>
 <script id="template-products" type="template">
-    <div class="row">
-        <ul id="productsList" class="list-group">
-        </ul>
+    <div id="productList" class="panel">
     </div>
     <div class="row">
         <button id="addProductBtn" type="button" class="btn btn-default">Add</button>
     </div>
 </script>
 <script id="template-product" type="template">
-    <li class="list-group-item col-xs-3"><%-name%></li>
-    <li class="list-group-item col-xs-2" style="text-align: right"><%-price%></li>
-    <li class="list-group-item col-xs-6"><%-description%></li>
-    <li class="list-group-item col-xs-1">
-        <span class="hidden-print btn btn-group pull-right">
-            <a class="product-delete-button">delete</a>
-        </span>
-    </li>
+    <div class="panel">
+        <div class="panel-body">
+            <span class="col-xs-3"><%-name%></span>
+            <span class="col-xs-2" style="text-align: right"><%-price%></span>
+            <span class="col-xs-6"><%-description%></span>
+            <span class="col-xs-1">
+                <span class="hidden-print btn btn-group pull-right">
+                    <a class="product-delete-button">delete</a>
+                </span>
+            </span>
+        </div>
+    </div>
 </script>
 <script id="template-alert" type="template">
     <div class="alert alert-dismissable <%=type%>">
