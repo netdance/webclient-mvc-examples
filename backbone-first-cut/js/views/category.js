@@ -27,7 +27,6 @@ App.Views.Category = Backbone.View.extend({
         var name = this.model.get('name');
         var collection = this.model.collection;
         this.model.destroy({
-            //wait: true, //todo ??  seems to give an error
             success: function() {
                 App.alert.addAlert('successfully deleted category: ' + name, 'success');
                 collection.fetch({reset: true});
