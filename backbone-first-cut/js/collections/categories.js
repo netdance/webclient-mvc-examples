@@ -11,7 +11,7 @@ App.Collections.Categories = Backbone.Collection.extend({
     },
     initialize: function(options) {
         console.log('initializing Categories collection');
-        _.bindAll(this, 'hasMore', 'hasLess', 'goMore', 'goLess', 'url');
+        _.bindAll(this, 'hasMore', 'hasLess', 'goMore', 'goLess', 'url', 'fetchAll');
         if (options.page) {
             this.page =  options.page;
         }
@@ -21,6 +21,25 @@ App.Collections.Categories = Backbone.Collection.extend({
              var sep = options.page ? '&' : '';
              this.baseurl = this.baseurl + sep + 'q=' + options.search;
              */
+        }
+    },
+    fetchAll: function() {
+        "use strict";
+        this.page = 1;
+        var collection = this;
+        this.fetch({
+            reset: false
+        }).done(getAnother);
+        function getAnother(data) {
+            if (data.length < 10) {
+                // done
+                collection.trigger('fetchedAll',collection);
+            } else {
+                collection.page++;
+                collection.fetch({
+                    remove: false
+                }).done(getAnother);
+            }
         }
     },
     hasMore: function() {

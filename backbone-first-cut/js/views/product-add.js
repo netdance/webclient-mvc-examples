@@ -26,7 +26,7 @@ App.Views.ProductAdd = Backbone.View.extend({
         var $container = this.$(this.categoryAnchor).empty();
         console.log('emptying container ' + $container.attr('id'));
         this.listenTo(this.categoryCollection,'reset',this.categoriesAdd);
-        this.listenTo(this.categoryCollection,'add',this.categoryAdd);
+        this.listenTo(this.categoryCollection,'fetchedAll',this.categoriesAdd);
         return this;
     },
     remove: function() {
