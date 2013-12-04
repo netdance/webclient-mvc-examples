@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css" />
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jqproduct.css" />
-    <!--- Because hidden='true' would be just *so* difficult for Microsoft to implement. --->
-    <!--[if IE]>
-*[hidden] {
-display: none;
-}
-<![endif]-->
     <script src="javascript/jqproduct.js"></script>
 
     <title>JQ Product</title>
@@ -78,7 +72,7 @@ display: none;
         </div>
     </div>
 
-    <div id="productContainer" class="container" hidden>
+    <div id="productContainer" class="container" style="display: none">
         <div class="alertAnchor hidden-md hidden-lg">
             <!-- alerts go here -->
         </div>
@@ -108,7 +102,7 @@ display: none;
 
     </div>
 
-    <div id="productAddContainer" class="container" hidden>
+    <div id="productAddContainer" class="container" style="display: none">
         <form id="addForm" role="form">
             <div class="row">
                 <div class="col-sm-8 col-md-9">
@@ -146,7 +140,7 @@ display: none;
         </form>
     </div>
 
-    <div id="categoriesContainer" class="container" hidden>
+    <div id="categoriesContainer" class="container" style="display: none">
         <div class="alertAnchor hidden-md hidden-lg">
             <!-- alerts go here -->
         </div>
@@ -170,7 +164,7 @@ display: none;
         <div id="categoryAddRegion">
             <a id="addCategoryBtn" class="btn btn-default" href="#categories&add=y">Add a category</a>
             <form role="form">
-                <span id="addCategoryInput" hidden>
+                <span id="addCategoryInput" style="display: none">
                     <div class="row">
                         <div class="col-sm-8 col-md-6 col-lg-4">
                             <div class="input-group">
@@ -190,7 +184,7 @@ display: none;
     </div>
 
     <!--- hidden area - buttons to clone -->
-    <div hidden>
+    <div style="display: none">
         <div id="catBtns" class="hidden-print btn btn-group pull-right">
             <button type="button" class="btn btn-small btn-default category-delete-button hidden-lg">
                 <span class="glyphicon glyphicon-trash"></span>

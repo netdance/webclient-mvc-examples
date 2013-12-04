@@ -17,9 +17,3 @@
 }
 /* needed for handling Bootstrap bug:  resized navbar overflow with dropdown button */
 
-
-/* fix for IE lacking the hidden attribute - included in html currently, to take advantage of conditional include
-*[hidden] {
-    display: none;
-}
-*/
