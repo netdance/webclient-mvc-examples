@@ -1,3 +1,12 @@
+/*
+    Front controller for our application.
+    Relies on the MainAnchor View to do page management.
+    Note that with the exception of the landing page, we're creating new views (and associated collections)
+    for every page landing.  This means that:
+    1) We need to not have any listeners on the collections and models
+    2) We need to have cleanup actions performed by the page manager (MainAnchor)
+ */
+
 App.Routers.Main = Backbone.Router.extend({
     routes: {
         'categories(/s=:search)(/p:page)': 'categories',
@@ -23,6 +32,7 @@ App.Routers.Main = Backbone.Router.extend({
         App.mainAnchor.render({
             $child: listView
         });
+        // emit a reset to signal our view to render
         collection.fetch({
             reset: true
         });
@@ -44,6 +54,7 @@ App.Routers.Main = Backbone.Router.extend({
         App.mainAnchor.render({
             $child: listView
         });
+        // emit a reset to signal our view to render
         collection.fetch({
             reset: true
         });
@@ -59,10 +70,11 @@ App.Routers.Main = Backbone.Router.extend({
             categoryCollection: categoryCollection,
             $container: App.mainAnchor.$el
         });
-        categoryCollection.fetchAll();
         App.mainAnchor.render({
             $child: addProductView
         });
+        // will emit a 'fetchedAll' event when done
+        categoryCollection.fetchAll();
     },
     home: function() {
         console.log('in home router');

@@ -721,7 +721,7 @@ var jqutil = (function () {
         // ie console fix
         if (!window.console && !window.console.log) {
             window.console = {};
-            window.console.log = function () {
+            window.console.log = function(s) {
             };
         }
     }

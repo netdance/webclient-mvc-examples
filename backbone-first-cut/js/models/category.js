@@ -16,6 +16,22 @@ App.Models.Category = Backbone.Model.extend({
         console.log('Initializing a new Category model for ' + name);
         _.bindAll(this,'sync');
     },
+    /*
+     Default handler:
+     create → POST   /categories
+     read → GET   /categories[/id]
+     update → PUT   /categories/id
+     delete → DELETE   /categories/id
+
+     This handler:
+     create → POST   /categories.json
+     read → GET   /categories/id.json
+     update → PUT   /categories/id.json
+     delete → DELETE   /categories/id.json
+
+     Collection reads happen via Categories Collection
+
+     */
     sync: function(method, model, options) {
         // override standard backbone url scheme to use
         // '/categories.json' for create and

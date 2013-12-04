@@ -9,14 +9,15 @@ App.Views.Categories = Backbone.View.extend({
         class: 'container'
     },
     template: _.template($('#template-categories').html()),
+    subViews: [],
     initialize: function(options) {
         "use strict";
-        _.bindAll(this, 'render', 'insert', 'addCategoryForm', 'addCategory', 'addSuccess', 'addError', 'refresh');
+        _.bindAll(this, 'render', 'insert', 'addCategoryForm', 'addCategory', 'addSuccess', 'addError',
+            'refresh', 'close','destroySubviews');
         console.log('initializing categories view');
         this.collection = options.collection;
         this.$container = options.$container;
         this.listenTo(this.collection, 'reset', this.render);
-        this.listenTo(this.collection, 'change', this.refresh);
     },
     refresh: function() {
         "use strict";
@@ -25,14 +26,16 @@ App.Views.Categories = Backbone.View.extend({
     render: function() {
         "use strict";
         console.log('rendering categories');
-        this.trigger('change');
+        this.destroySubviews();
+
         this.$el.html(this.template());
-        var pagerView = new App.Views.Pager({
+
+         var pagerView = new App.Views.Pager({
             collection: this.collection,
             $container: this.$el
         });
         pagerView.render();
-        pagerView.listenTo(this, 'change', pagerView.remove);
+        this.subViews.push(pagerView);
         var $container = this.$('#categoriesList').empty();
         console.log('emptying container ' + $container.attr('id'));
         var owningView = this;
@@ -43,7 +46,7 @@ App.Views.Categories = Backbone.View.extend({
                 $container: $container
             });
             newCatRow.render();
-            newCatRow.listenTo(owningView,'change',newCatRow.remove);
+            owningView.subViews.push(newCatRow);
         });
         return this;
     },
@@ -85,5 +88,17 @@ App.Views.Categories = Backbone.View.extend({
     addError: function() {  // model, xhr, options
         "use strict";
         App.alert.addAlert('error saving category','error');
+    },
+    destroySubviews: function() {
+        _.each(this.subViews, function(view) {
+            console.log('removing view '+view.cid);
+            view.remove();
+        });
+        this.subViews = [];
+    },
+    close: function close() {
+        this.destroySubviews();
+        this.remove();
     }
+
 });

@@ -1,3 +1,7 @@
+/*
+ Collection for accessing backend products for qedserver.
+ qedserver only allows paged access to lists of products.
+ */
 App.Collections.Products = Backbone.Collection.extend({
     model: App.Models.Product,
     baseurl: '/products.json?',
@@ -24,14 +28,19 @@ App.Collections.Products = Backbone.Collection.extend({
             this.search = options.search;
         }
     },
+    // paging function.  Note that this impl is bugged - if the server has exactly #categories % 10, then this will
+    // incorrectly return true.  But for our purposes, it's good enough.  In a real system, you'd be able to get an
+    // aggregate count anyway.
     hasMore: function() {
         "use strict";
         return this.length === 10;
     },
+    // paging function.
     hasLess: function() {
         "use strict";
         return this.page > 1;
     },
+    // paging function.
     goMore: function() {
         "use strict";
         if (this.hasMore()) {
@@ -39,6 +48,7 @@ App.Collections.Products = Backbone.Collection.extend({
             this.fetch({reset: true});
         }
     },
+    // paging function.
     goLess: function() {
         "use strict";
         if (this.hasLess()) {

@@ -2,9 +2,9 @@ App.Views.MainAnchor = Backbone.View.extend({
     $child: null,
     landing: null,  // special case for cached landing page
     el: '#mainAnchorPoint',
-    intialize: function() {
+    initialize: function() {
         console.log('initializing mainanchor');
-        this.bindAll(this, 'render', 'showLanding');
+        _.bindAll(this, 'render', 'showLanding');
     },
     render: function(options) {
         console.log('rendering main anchor');
@@ -12,8 +12,7 @@ App.Views.MainAnchor = Backbone.View.extend({
             if (this.$child === this.landing) {
                 this.landing.$el.hide();
             } else if (this.$child) {
-                this.$child.trigger('change');
-                this.$child.remove();
+                this.$child.close();
             }
             this.$child = options.$child;
             if (this.$child === this.landing) {

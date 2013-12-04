@@ -10,7 +10,7 @@ App.Views.ProductAdd = Backbone.View.extend({
     initialize: function(options) {
         "use strict";
         console.log('initializing add product view');
-        _.bindAll(this, 'render', 'insert', 'addSuccess', 'addError', 'remove', 'categoryAdd','categoriesAdd');
+        _.bindAll(this, 'render', 'insert', 'addSuccess', 'addError', 'remove', 'categoryAdd','categoriesAdd','close');
 
         this.$container = options.$container;
         this.collection = options.collection;
@@ -91,5 +91,8 @@ App.Views.ProductAdd = Backbone.View.extend({
     addError: function() {  // model, xhr, options
         "use strict";
         App.alert.addAlert('error saving product','error');
+    },
+    close: function() {
+        this.remove();
     }
 });

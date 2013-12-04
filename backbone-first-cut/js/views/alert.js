@@ -20,7 +20,8 @@ App.Views.Alert = Backbone.View.extend({
         "use strict";
         console.log('adding alert '+message);
         // note: may behave badly on limited cpu machines
-        // a real impl would use CSS transitions
+        // a real impl would use CSS transitions, and probably a message queue, which would also solve
+        // the problem of how to clean this all up after we display it (it's currently sticking around the DOM
         // see: http://stackoverflow.com/questions/7676356/can-twitter-bootstrap-alerts-fade-in-as-well-as-out
         // todo implement in CSS transitions
         var $alert = $(this.template({

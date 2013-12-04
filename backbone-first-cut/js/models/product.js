@@ -28,6 +28,21 @@ App.Models.Product = Backbone.Model.extend({
         console.log('Initializing a new Product model for ' + name);
         _.bindAll(this,'sync');
     },
+    /*
+     Default handler:
+     create → POST   /products
+     read → GET   /products[/id]
+     update → PUT   /products/id
+     delete → DELETE   /products/id
+
+     This handler:
+     create → POST   /products.json
+     read → GET   /products/id.json
+     update → PUT   /products/id.json
+     delete → DELETE   /products/id.json
+
+     Collection reads happen via Products Collection
+     */
     sync: function(method, model, options) {
         // override standard backbone url scheme to use
         // '/categories.json' for create and
