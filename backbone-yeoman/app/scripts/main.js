@@ -22,7 +22,7 @@ require.config({
         jquery: '../bower_components/jquery/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/underscore/underscore',
-        bootstrap: 'vendor/bootstrap'
+        bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap'
     }
 });
 

@@ -91,3 +91,8 @@ body {
 }
 
 
+/* needed for handling Bootstrap bug:  resized navbar overflow with dropdown button */
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
