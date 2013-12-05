@@ -31,13 +31,11 @@ require([
 ], function (Backbone, bootstrap) {
     $(function() {
         require([
-            'views/navigationbar', 'views/navsearch', 'views/main','routes/main'
-        ], function (NavigationBarView, NavsearchView, MainView, MainRouter) {
+            'routes/main', 'views/navigationbar', 'views/navsearch'
+        ], function (MainRouter, NavigationBarView, NavsearchView) {
+                Backbone.history.start();
                 new NavigationBarView();
                 new NavsearchView();
-                var main = new MainView();
-                new MainRouter({mainView: main});
-                Backbone.history.start();
         })
     
     });

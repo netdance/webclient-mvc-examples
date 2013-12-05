@@ -16,8 +16,8 @@ define([
 		        '': 'home'
 		    },
 		    mainView: null,
-		    initialize: function(options) {
-		    	this.mainView = options.mainView;
+		    initialize: function() {
+		    	this.mainView = new MainView();
 		    },
 		    /*
 		    products: function(cat,search,page) {
@@ -89,5 +89,5 @@ define([
 
     });
 
-    return MainRouter;
+    return new MainRouter();
 });
