@@ -27,7 +27,7 @@ require.config({
 });
 
 require([
-    'backbone'
+    'backbone', 'bootstrap'
 ], function (Backbone) {
     Backbone.history.start();
 });
