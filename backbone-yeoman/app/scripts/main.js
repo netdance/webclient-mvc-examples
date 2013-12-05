@@ -27,7 +27,9 @@ require.config({
 });
 
 require([
-    'backbone', 'bootstrap'
-], function (Backbone) {
+    'backbone', 'bootstrap', 'views/navigationbar', 'views/navsearch'
+], function (Backbone, bootstrap, NavigationBarView, NavsearchView) {
+    new NavigationBarView();
+    new NavsearchView();
     Backbone.history.start();
 });
