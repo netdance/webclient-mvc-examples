@@ -27,11 +27,18 @@ require.config({
 });
 
 require([
-    'backbone', 'bootstrap', 'views/navigationbar', 'views/navsearch', 'views/main','routes/main'
-], function (Backbone, bootstrap, NavigationBarView, NavsearchView, MainView, MainRouter) {
-    new NavigationBarView();
-    new NavsearchView();
-    var main = new MainView();
-    new MainRouter({mainView: main});
-    Backbone.history.start();
+    'backbone', 'bootstrap', 
+], function (Backbone, bootstrap) {
+    $(function() {
+        require([
+            'views/navigationbar', 'views/navsearch', 'views/main','routes/main'
+        ], function (NavigationBarView, NavsearchView, MainView, MainRouter) {
+                new NavigationBarView();
+                new NavsearchView();
+                var main = new MainView();
+                new MainRouter({mainView: main});
+                Backbone.history.start();
+        })
+    
+    });
 });

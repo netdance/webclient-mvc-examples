@@ -2,8 +2,9 @@
 
 define([
     'jquery',
-    'backbone'
-], function ($, Backbone) {
+    'backbone',
+    'views/main'
+], function ($, Backbone, MainView) {
     'use strict';
 
     var MainRouter = Backbone.Router.extend({
