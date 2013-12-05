@@ -27,9 +27,11 @@ require.config({
 });
 
 require([
-    'backbone', 'bootstrap', 'views/navigationbar', 'views/navsearch'
-], function (Backbone, bootstrap, NavigationBarView, NavsearchView) {
+    'backbone', 'bootstrap', 'views/navigationbar', 'views/navsearch', 'views/main','routes/main'
+], function (Backbone, bootstrap, NavigationBarView, NavsearchView, MainView, MainRouter) {
     new NavigationBarView();
     new NavsearchView();
+    var main = new MainView();
+    new MainRouter({mainView: main});
     Backbone.history.start();
 });
