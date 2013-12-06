@@ -11,9 +11,9 @@ define([
 
     var NavigationbarView = Backbone.View.extend({
         events: {
-        'click .navbar-brand': 'onBrandClick',
-        'click #productNavLink': 'onProductClick',
-        'click #categoryNavLink': 'onCategoryClick'
+            'click .navbar-brand': 'onBrandClick',
+            'click #productNavLink': 'onProductClick',
+            'click #categoryNavLink': 'onCategoryClick'
         },
         el: '#topnav',
         onBrandClick: function () {

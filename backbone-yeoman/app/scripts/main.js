@@ -1,4 +1,6 @@
 /*global require*/
+/* jshint undef: true, unused: false */  /* for the bootstrap entry */
+
 'use strict';
 
 require.config({
@@ -27,16 +29,17 @@ require.config({
 });
 
 require([
-    'backbone', 'bootstrap', 
+    'backbone', 'bootstrap',
 ], function (Backbone, bootstrap) {
     $(function() {
         require([
             'routes/main', 'views/navigationbar', 'views/navsearch'
-        ], function (MainRouter, NavigationBarView, NavsearchView) {
+        ],
+        function (MainRouter, NavigationBarView, NavsearchView) {
                 Backbone.history.start();
                 new NavigationBarView();
                 new NavsearchView();
-        })
+            });
     
     });
 });

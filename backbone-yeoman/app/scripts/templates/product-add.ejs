@@ -1,2 +1,38 @@
-<p>Your content here.</p>
+<form id="addForm">
+    <div class="row">
+        <div class="col-sm-8 col-md-9">
+            <div class="form-group">
+                <label for="addProductName">Product Name</label>
+                <input type="text" class="form-control" id="addProductName" autocomplete="off"
+                       placeholder="Enter name">
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-2">
+            <div class="form-group">
+                <label for="addProductPrice">Price</label>
 
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input class="form-control" type="text" id="addProductPrice" autocomplete="off"
+                           placeholder="Enter Price">
+                    <span class="input-group-addon">.00</span>
+                </div>
+                <p class="help-block">Enter a whole dollar amount.</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="addProductDescription">Description</label>
+        <textarea id="addProductDescription" class="form-control" rows="5"
+                  placeholder="Enter Product Description"></textarea>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Categories</div>
+        <div class="panel-body">
+            <div id="addProductCategories" class="row">
+                <!-- category checkboxes will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary">Submit</button>
+</form>
