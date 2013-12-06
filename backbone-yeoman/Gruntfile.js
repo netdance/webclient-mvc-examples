@@ -120,7 +120,9 @@ module.exports = function (grunt) {
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
-                reporter: require('jshint-stylish')
+                reporter: require('jshint-stylish'),
+                ignores: ['<%= yeoman.app %>/scripts/templates.js']
+                
             },
             all: [
                 'Gruntfile.js',
@@ -128,6 +130,14 @@ module.exports = function (grunt) {
                 '!<%= yeoman.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
+        },
+        htmlhint: {
+            all: {
+                options: {
+                    'tag-pair': true
+                },
+                src: ['<%= yeoman.app %>/index.html']
+            }
         },
         mocha: {
             all: {
@@ -364,6 +374,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'jshint',
+        'htmlhint',
         'test',
         'build'
     ]);
