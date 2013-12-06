@@ -5,7 +5,7 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'view/alert'
+    'views/alert'
 ], function ($, _, Backbone, JST, alertView) {
     'use strict';
 

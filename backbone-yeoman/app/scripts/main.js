@@ -36,6 +36,7 @@ require([
             'routes/main', 'views/navigationbar', 'views/navsearch'
         ],
         function (MainRouter, NavigationBarView, NavsearchView) {
+                new MainRouter();
                 Backbone.history.start();
                 new NavigationBarView();
                 new NavsearchView();

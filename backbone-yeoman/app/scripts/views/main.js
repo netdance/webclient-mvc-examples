@@ -10,7 +10,7 @@ define([
     'use strict';
 
     var MainView = Backbone.View.extend({
-        $child: null,
+        child: null,
 	    landing: null,  // special case for cached landing page
 	    el: '#mainAnchorPoint',
 	    initialize: function() {
@@ -19,17 +19,17 @@ define([
 	    },
 	    render: function(options) {
 	        console.log('rendering main anchor');
-	        if (options.$child) {
-	            if (this.$child === this.landing) {
+	        if (options.child) {
+	            if (this.child === this.landing) {
 	                this.landing.$el.hide();
-	            } else if (this.$child) {
-	                this.$child.close();
+	            } else if (this.child) {
+	                this.child.close();
 	            }
-	            this.$child = options.$child;
-	            if (this.$child === this.landing) {
+	            this.child = options.child;
+	            if (this.child === this.landing) {
 	                this.landing.$el.show();
 	            } else {
-	                this.$child.insert();
+	                this.child.insert();
 	            }
 	        }
 	        return this;
@@ -42,7 +42,7 @@ define([
 	            this.landing.render();
 	        }
 	        this.render({
-	            $child: this.landing
+	            child: this.landing
 	        });
 	    }
     });

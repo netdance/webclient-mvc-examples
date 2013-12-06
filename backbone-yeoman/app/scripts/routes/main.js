@@ -3,15 +3,20 @@
 define([
     'jquery',
     'backbone',
-    'views/main'
-], function ($, Backbone, MainView) {
+    'views/main',
+    'collections/product',
+    'collections/category',
+    'views/products',
+    'views/categories',
+    'views/product-add'
+], function ($, Backbone, MainView, ProductCollection, CategoryCollection, ProductsView, CategoriesView, ProductAddView) {
     'use strict';
 
     var MainRouter = Backbone.Router.extend({
             routes: {
-                //'categories(/s=:search)(/p:page)': 'categories',
-                //'products(/c:cat)(/s=:search)(/p:page)': 'products',
-                //'products/add': 'addProduct',
+                'categories(/s=:search)(/p:page)': 'categories',
+                'products(/c:cat)(/s=:search)(/p:page)': 'products',
+                'products/add': 'addProduct',
                 'home': 'home',
                 '': 'home'
             },
@@ -19,75 +24,71 @@ define([
             initialize: function() {
                 this.mainView = new MainView();
             },
-            /*
-            products: function(cat,search,page) {
+            products: function products(cat,search,page) {
                 console.log('in products router');
                 if (!page || page <1) {
                     page = 1;
                 }
-                var collection = new App.Collections.Products({
+                var collection = new ProductCollection({
                     page: page,
                     cat: cat,
                     search: search
                 });
-                var listView = new App.Views.Products({
+                var listView = new ProductsView({
                     collection: collection,
-                    $container: App.mainAnchor.$el
+                    $container: this.mainView.$el
                 });
-                App.mainAnchor.render({
-                    $child: listView
+                this.mainView.render({
+                    child: listView
                 });
                 // emit a reset to signal our view to render
                 collection.fetch({
                     reset: true
                 });
             },
-            categories: function(search,page) {
+            categories: function categories(search,page) {
                 console.log('in categories router');
                 if (!page || page <1) {
                     page = 1;
                 }
-                var collection = new App.Collections.Categories({
+                var collection = new CategoryCollection({
                     page: page,
                     search: search
                 });
-                var listView = new App.Views.Categories({
+                var listView = new CategoriesView({
                     collection: collection,
-                    $container: App.mainAnchor.$el,
+                    $container: this.mainView.$el,
                     page: page
                 });
-                App.mainAnchor.render({
-                    $child: listView
+                this.mainView.render({
+                    child: listView
                 });
                 // emit a reset to signal our view to render
                 collection.fetch({
                     reset: true
                 });
             },
-            addProduct: function() {
+            addProduct: function addProduct() {
                 console.log('in addProduct router ');
-                var collection = new App.Collections.Products({
-                });
-                var categoryCollection = new App.Collections.Categories({
-                });
-                var addProductView = new App.Views.ProductAdd({
+                var collection = new ProductCollection({});
+                var categoryCollection = new CategoryCollection({});
+                var addProductView = new ProductAddView({
                     collection: collection,
                     categoryCollection: categoryCollection,
-                    $container: App.mainAnchor.$el
+                    $container: this.mainView.$el
                 });
-                App.mainAnchor.render({
-                    $child: addProductView
+                this.mainView.render({
+                    child: addProductView
                 });
                 // will emit a 'fetchedAll' event when done
                 categoryCollection.fetchAll();
             },
-            */
-            home: function() {
+            home: function home() {
                 console.log('in home router');
                 this.mainView.showLanding();
             }
 
 	    });
-
-    return new MainRouter();
+    
+    return MainRouter;
 });

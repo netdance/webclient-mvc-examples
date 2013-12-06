@@ -4,9 +4,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates',
-    'routes/main'
-], function ($, _, Backbone, JST, mainRouter) {
+    'templates'
+], function ($, _, Backbone, JST) {
     'use strict';
 
     var NavsearchView = Backbone.View.extend({
@@ -37,7 +36,7 @@ define([
             this.$defaultSearch.hide();
             this.$categorySearch.hide();
             this.$productSearch.show();
-            mainRouter.navigate('/products/s='+searchTerm,{trigger: true});
+            Backbone.history.navigate('/products/s='+searchTerm,{trigger: true});
         },
         searchCategory: function() {
             var searchTerm = this.$searchInput.val();
@@ -45,7 +44,7 @@ define([
             this.$defaultSearch.hide();
             this.$productSearch.hide();
             this.$categorySearch.show();
-            mainRouter.navigate('/categories/s='+searchTerm,{trigger: true});
+            Backbone.history.navigate('/categories/s='+searchTerm,{trigger: true});
         }
     });
 
