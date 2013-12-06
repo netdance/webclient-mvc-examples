@@ -10,14 +10,3 @@
         });
     });
 })();
-
-/*
-(function() {
-	describe('Test Category Model', function() {
-		it('should exist', function() {
-				require('../../app/scripts/models/category');
-		});
-	});
-
-})();
-*/
