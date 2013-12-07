@@ -2,18 +2,20 @@
   "name": "backbone-yeoman",
   "version": "0.0.0",
   "dependencies": {
-    "sass-bootstrap": "~3.0.0",
+    "sass-bootstrap": "~3.0",
     "jquery": "~1",
-    "underscore": "~1.4.3",
-    "backbone": "~1.0.0",
-    "requirejs": "~2.1.5",
-    "requirejs-text": "~2.0.5",
-    "modernizr": "~2.6.2"
+    "underscore": "~1.4",
+    "backbone": "~1.0",
+    "requirejs": "~2.1",
+    "requirejs-text": "~2.0",
+    "modernizr": "~2.6"
   },
   "devDependencies": {
-    "chai-jquery": "~1.1.2",
+    "chai-jquery": "~1.1",
     "chai-backbone": "*",
-    "chai": "~1.8.1",
-    "mocha": "~1.15.1"
+    "chai": "~1.8",
+    "mocha": "~1.15",
+    "sinon": "~1.7",
+    "sinon-chai": "~2.4"
   }
 }
