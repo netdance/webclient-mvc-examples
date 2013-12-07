@@ -7,7 +7,9 @@ require.config({
       bootstrap: '/bower_components/sass-bootstrap/dist/js/bootstrap',
       //mocha: 'lib/mocha/mocha',
       chai: 'lib/chai',
-      models: '/scripts/models/models'
+      models: '/scripts/models/models',
+      CategoryModel: '/scripts/models/category',
+      ProductModel: '/scripts/models/product'
   },
   shim: {
     'underscore': {

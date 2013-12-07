@@ -20,8 +20,8 @@ define([
 	        return false;
 	    },
 	    initialize: function(attributes) {
-	        var name = attributes.name || '<NOT SET>';
-	        console.log('Initializing a new Category model for ' + name);
+	        //var name = attributes.name || '<NOT SET>';
+	        //console.log('Initializing a new Category model for ' + name);
 	        _.bindAll(this,'sync');
 	    },
 	    /*
