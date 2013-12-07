@@ -11,7 +11,7 @@ define(function(require) {
 				var categoryModel = new CategoryModel();
 				it('should have default name of empty string', function() {
 					var defaultName = categoryModel.get('name');
-					defaultName.should.equal('')
+					defaultName.should.equal('');
 				});
 			});
 		});
