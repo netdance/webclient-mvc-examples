@@ -20,7 +20,7 @@ define([
 	    render: function(options) {
 	        console.log('rendering main anchor');
 	        if (options.child) {
-	            if (this.child === this.landing) {
+	            if (this.child && this.child === this.landing) {
 	                this.landing.$el.hide();
 	            } else if (this.child) {
 	                this.child.close();

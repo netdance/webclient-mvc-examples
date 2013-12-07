@@ -4,9 +4,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'templates',
-    'views/alert'
-], function ($, _, Backbone, JST, alertView) {
+    'templates'
+], function ($, _, Backbone, JST) {
     'use strict';
 
     var CategoryView = Backbone.View.extend({
@@ -38,11 +37,17 @@ define([
             var collection = this.model.collection;
             this.model.destroy({
                 success: function() {
-                    alertView.addAlert('successfully deleted category: ' + name, 'success');
+                    Backbone.trigger('alert',{
+                        message: 'successfully deleted category: ' + name,
+                        type: 'success'
+                    });
                     collection.fetch({reset: true});
                 },
                 error: function() {
-                    alertView.addAlert('error deleting category: ' + name, 'error');
+                    Backbone.trigger('alert',{
+                        message: 'error deleting category: ' + name,
+                        type: 'error'
+                    });
                 }
             });
         }

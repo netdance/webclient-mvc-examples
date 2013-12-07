@@ -32,6 +32,7 @@ define([
 	    render: function render() {
 	        console.log('rendering products');
 	        this.destroySubviews();
+	        this.$el.empty();
 	        this.$el.html(this.template);
 	        var pagerView = new PagerView({
 	            collection: this.collection,
