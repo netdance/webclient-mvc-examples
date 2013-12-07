@@ -1,6 +1,5 @@
 /* global define, describe, it */
 
-
 define(function(require) {
 	'use strict';
 
