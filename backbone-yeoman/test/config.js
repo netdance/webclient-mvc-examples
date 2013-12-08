@@ -9,7 +9,8 @@ require.config({
       chai: 'lib/chai',
       models: '/scripts/models/models',
       CategoryModel: '/scripts/models/category',
-      ProductModel: '/scripts/models/product'
+      ProductModel: '/scripts/models/product',
+      Alerts: '/scripts/views/alert'
   },
   shim: {
     'underscore': {
