@@ -5,8 +5,9 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'views/category-check'
-], function ($, _, Backbone, JST, CategoryCheckView) {
+    'views/category-check',
+    'routes/main'
+], function ($, _, Backbone, JST, CategoryCheckView, router) {
     'use strict';
 
     var ProductAddView = Backbone.View.extend({
@@ -94,9 +95,7 @@ define([
                 message: 'added product successfully',
                 type: 'success'
             });
-            Backbone.history.navigate('/products', {
-                trigger: true
-            });
+            router.products();
         },
         addError: function() {  // model, xhr, options
             Backbone.trigger('alert',{

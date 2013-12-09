@@ -21,6 +21,17 @@ define([
             },
             products: function products(cat,search,page) {
                 var mainView = this.mainView;
+                var url = '/products';
+                if (cat) {
+                    url += '/c' + encodeURIComponent(cat);
+                }
+                if (search) {
+                    url += '/s='+ encodeURIComponent(search);
+                }
+                if (page) {
+                    url += 'p'+ encodeURIComponent(page);
+                }
+                this.navigate(url);
                 require([
                     'collections/product',
                     'views/products'
@@ -49,6 +60,14 @@ define([
             },
             categories: function categories(search,page) {
                 var mainView = this.mainView;
+                var url = '/categories';
+                if (search) {
+                    url += '/s='+ encodeURIComponent(search);
+                }
+                if (page) {
+                    url += 'p'+ encodeURIComponent(page);
+                }
+                this.navigate(url);
                 require([
                     'collections/category',
                     'views/categories'
@@ -79,6 +98,7 @@ define([
             },
             addProduct: function addProduct() {
                 var mainView = this.mainView;
+                this.navigate('/products/add');
                 require([
                     'collections/category',
                     'collections/product',
@@ -103,6 +123,7 @@ define([
                 );
             },
             home: function home() {
+                this.navigate('/home');
                 console.log('in home router');
                 this.mainView.showLanding();
             }

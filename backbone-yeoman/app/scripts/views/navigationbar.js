@@ -3,8 +3,9 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
-], function ($, _, Backbone) {
+    'backbone',
+    'routes/main'
+], function ($, _, Backbone,router) {
     'use strict';
 
     var NavigationbarView = Backbone.View.extend({
@@ -15,21 +16,14 @@ define([
         },
         el: '#topnav',
         onBrandClick: function () {
-            Backbone.history.navigate('/home', {
-                trigger: true
-            });
+            router.home();
         },
         onProductClick: function () {
-            Backbone.history.navigate('/products', {
-                trigger: true
-            });
+            router.products();
         },
         onCategoryClick: function () {
-            Backbone.history.navigate('/categories', {
-                trigger: true
-            });
+            router.categories();
         }
     });
-
     return NavigationbarView;
 });
