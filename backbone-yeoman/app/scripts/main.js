@@ -36,7 +36,6 @@ require([
             'routes/main', 'views/navigationbar', 'views/navsearch', 'views/alert'
         ],
         function (MainRouter, NavigationBarView, NavsearchView, AlertView) {
-                new MainRouter();
                 Backbone.history.start();
                 new AlertView();
                 new NavigationBarView();

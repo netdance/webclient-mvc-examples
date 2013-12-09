@@ -25,7 +25,7 @@ define([
             this.insert();
         },
         render: function() {
-        	this.$el.empty();
+            this.$el.empty();
             this.$el.html(this.template({
                 name: this.model.get('name'),
                 price: Number(this.model.get('price')).toFixed(2),
