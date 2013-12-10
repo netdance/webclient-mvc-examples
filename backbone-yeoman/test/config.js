@@ -1,16 +1,16 @@
 require.config({
-  baseUrl: '/',
+  baseUrl: '/scripts',
   paths: {
       jquery: '/bower_components/jquery/jquery',
       backbone: '/bower_components/backbone/backbone',
       underscore: '/bower_components/underscore/underscore',
       bootstrap: '/bower_components/sass-bootstrap/dist/js/bootstrap',
       //mocha: 'lib/mocha/mocha',
-      chai: 'lib/chai',
-      models: '/scripts/models/models',
+      chai: '/lib/chai',
       CategoryModel: '/scripts/models/category',
       ProductModel: '/scripts/models/product',
-      Alerts: '/scripts/views/alert'
+      Alerts: '/scripts/views/alert',
+      Router: '/scripts/routes/main'
   },
   shim: {
     'underscore': {
