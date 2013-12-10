@@ -10,10 +10,31 @@
     <script src="lib/chai.js"></script>
     <script type="text/javascript" src="/bower_components/requirejs/require.js"></script>
     <script src="config.js"></script>
-    <script src="SpecRunner.js"></script>
+
+
+    <script> 
+mocha.setup({
+    ui: 'bdd',
+    ignoreLeaks: true
+});
+
+var should = chai.should();
+
+function runMocha() {
+    // Required to run via mocha-phantomjs from commandline
+    if (window.mochaPhantomJS) { 
+      mochaPhantomJS.run(); 
+    }
+    else { 
+      mocha.run(); 
+    }
+}
+</script>
+
+
     <script type="text/javascript" charset="utf-8">
         require([
-            'require','chai',
+            'require',
             'spec/test-models.js',
             'spec/test-collections.js',
             'spec/test-alertView.js',

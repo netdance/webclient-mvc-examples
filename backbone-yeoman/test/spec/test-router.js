@@ -1,4 +1,4 @@
-/* global define, describe, it */
+/* global define, describe, it, before, Backbone */
 
 define(function(require) {
     'use strict';

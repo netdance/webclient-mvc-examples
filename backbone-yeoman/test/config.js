@@ -5,12 +5,10 @@ require.config({
       backbone: '/bower_components/backbone/backbone',
       underscore: '/bower_components/underscore/underscore',
       bootstrap: '/bower_components/sass-bootstrap/dist/js/bootstrap',
-      //mocha: 'lib/mocha/mocha',
-      chai: '/lib/chai',
-      CategoryModel: '/scripts/models/category',
-      ProductModel: '/scripts/models/product',
-      Alerts: '/scripts/views/alert',
-      Router: '/scripts/routes/main'
+      CategoryModel: 'models/category',
+      ProductModel: 'models/product',
+      Alerts: 'views/alert',
+      Router: 'routes/main'
   },
   shim: {
     'underscore': {
@@ -22,13 +20,6 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
-    },
-    mocha: {
-         exports: 'mocha'
-    },
-    chai: {
-         exports: 'chai'
     }
-  }//,
-  //urlArgs: 'bust=' + (new Date()).getTime()
+  }
 });
