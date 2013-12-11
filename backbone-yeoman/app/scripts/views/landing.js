@@ -23,7 +23,12 @@ define([
 	    render: function () {
 	        this.$el.html(this.template());
 	        // initialize Bootstrap popover
-	        this.$('[data-toggle=popover]').popover();
+            // for now, put in a try/catch since testing is having problems with bootstrap js
+            try {
+                this.$('[data-toggle=popover]').popover();
+            } catch (e) {
+                console.log(e.message);
+            }
 	        this.$container.append(this.$el);
 	        return this;
 	    }

@@ -2,34 +2,40 @@
   <head>
     <meta charset="utf-8"/>
     <title>Backbone Tests</title>
-    <link rel="stylesheet" href="lib/mocha/mocha.css"/>
+    <link rel="stylesheet" href="/bower_components/mocha/mocha.css"/>
   </head>
   <body>
     <div id="mocha"></div>
-    <script src="lib/mocha/mocha.js"></script>
-    <script src="lib/chai.js"></script>
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/mocha/mocha.js"></script>
+    <script src="/bower_components/chai/chai.js"></script>
+    <script src="/bower_components/sinon/lib/sinon.js"></script>
+    <script src="/bower_components/chai-backbone/chai-backbone.js"></script>
+    <script src="/bower_components/chai-jquery/chai-jquery.js"></script>
+    <script src="/bower_components/sinon-chai/lib/sinon-chai.js"></script>
     <script src="/bower_components/requirejs/require.js"></script>
     <script src="config.js"></script>
 
     <script> 
-mocha.setup({
-    ui: 'bdd',
-    ignoreLeaks: true
-});
+        mocha.setup({
+            ui: 'bdd',
+            ignoreLeaks: true
+        });
 
-var should = chai.should();
+        var should = chai.should();
 
-function runMocha() {
-    // Required to run via mocha-phantomjs from commandline
-    if (window.mochaPhantomJS) { 
-      mochaPhantomJS.run(); 
-    }
-    else { 
-      mocha.run(); 
-    }
-}
-</script>
-
+        function runMocha() {
+            // Required to run via mocha-phantomjs from grunt
+            if (window.mochaPhantomJS) { 
+              mochaPhantomJS.run(); 
+            }
+            else { 
+              mocha.run(); 
+            }
+        }
+    </script>
+    <!-- require block - add tests to run here -->
     <script type="text/javascript" charset="utf-8">
         require([
             'require',
@@ -42,5 +48,9 @@ function runMocha() {
     <!--  Doesn't work in grunt, though it does work in manual mode
         <script data-main="SpecRunner.js" src="/bower_components/requirejs/require.js"></script>
     --> 
+
+    <div id="test-fixture">
+    </div>
+
   </body>
 </html>

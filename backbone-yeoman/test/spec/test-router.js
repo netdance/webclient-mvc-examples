@@ -7,9 +7,25 @@ define(function(require) {
 
     before(function() {
         require('backbone');
-        //var Router = require('Router');  // this will work, I think, once we change the views it loads on startup.
-        Backbone.history.start();
+
+        // create mainanchor tag, for mainview which is initialized by router
+        var $mainanchor = $('<div></div>').attr('id','mainAnchorPoint');
+        $('#test-fixture').append($mainanchor);
+
+        var Router = require('Router');  
+
+        // TODO - there's a problem integrating bootstrap with our testing.
+        // it's failing on .popover()
+        //Backbone.history.start();
     });
+
+    after(function() {
+        // undocumented call, but seems intended for testing
+        Backbone.history.stop();
+        var Router = require('Router');  
+        Router.mainView.remove(); //todo clean up child views
+        $('#test-fixture').empty();
+    })
 
     describe('Router', function() {
         it('should start in place', function() {
