@@ -1,7 +1,7 @@
 webclient-mvc-examples
 ======================
 
-Example code from my explorations of MV* webclient frameworks
+Example code from my explorations of MV* webclient frameworks, which I'm discussing at [my blog](http://jamesgdriscoll.wordpress.com)
 
 All code uses qedserver as the backend REST datasource
 
