@@ -1,6 +1,6 @@
 /* global define, describe, it */
 
-define(function(require) {
+define(function(/*require*/) {
     'use strict';
 
     describe('Alerts', function() {
