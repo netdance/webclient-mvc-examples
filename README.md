@@ -5,8 +5,8 @@ Example code from my explorations of MV* webclient frameworks
 
 All code uses qedserver as the backend REST datasource
 
-Currently consists of two exmaples:
+Currently consists of three exmaples:
 
-a vanilla jQuery/bootstrap code set
-
-A very rough first use of Backbone
+* [a vanilla jQuery/bootstrap setup](https://github.com/netdance/webclient-mvc-examples/tree/master/vanilla-jQuery-MVC-sample)
+* [A first use of Backbone](https://github.com/netdance/webclient-mvc-examples/tree/master/backbone-first-cut)
+* [A first use of Backbone set up with Yeoman](https://github.com/netdance/webclient-mvc-examples/tree/master/backbone-yeoman), allowing me to explore Grunt, Require.js and other tools

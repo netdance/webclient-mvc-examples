@@ -7,7 +7,7 @@ It uses a hand built controller, a thin model layer and is frankly a bit of a me
 
 ## Install and see it run
 
-download [qedserver](http://qedserver.napcs.com/) , then install the repo in the server's public directory
+download [qedserver](http://qedserver.napcs.com/) , then install this subdirectory of the repo in the server's `/public` directory 
 
 Navigate to [http://localhost:8080/index.html](http://localhost:8080/index.html) and everything should be pretty 
 self explanitory from there.
