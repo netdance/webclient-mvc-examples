@@ -15,7 +15,7 @@
     "chai-backbone": "*",
     "chai": "~1.8",
     "mocha": "~1.15",
-    "sinon": "~1.7",
+    "sinonjs": "~1.7.3",
     "sinon-chai": "~2.4",
     "squire": "*"
   }
