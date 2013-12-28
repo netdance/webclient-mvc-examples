@@ -9,8 +9,7 @@
  */
 
 // IIFE, passing jquery $ function object
-var jqproduct;
-jqproduct = function ($) {
+var jqproduct = function ($) {
     var pub = {},
     // selectors for owning page all go here, to decouple page with code
         htmlMap = {
