@@ -719,7 +719,7 @@ var jqutil = (function () {
     //// begin behavior block ////
     function consoleFix() {
         // ie console fix
-        if (!window.console && !window.console.log) {
+        if (!window.console) {
             window.console = {};
             window.console.log = function(s) {
             };
