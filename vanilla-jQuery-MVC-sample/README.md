@@ -1,10 +1,10 @@
-## JQProduct - asample Thin Server implementation built with vanilla jQuery (plus a little Bootstrap)
+## JQProduct - a sample Thin Server implementation built with vanilla jQuery (plus a little Bootstrap)
 
 
 I wrote this primarily to get a feel for pain points that needed to 
 be solved by the new MVC clientside frameworks.
 
-It uses a hand built controller, a thin model layer and is frankly a bit of a mess.
+It uses a hand built front controller, a thin model layer and is frankly a bit of a mess.
 
 ### Install and see it run
 
