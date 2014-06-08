@@ -8,7 +8,6 @@ It is NOT complete as of yet, and is full of both architectural and functional b
 
 download [qedserver](http://qedserver.napcs.com/) , then install the repo in the server's public directory.
 
-run bower install to add the runtime dependencies. (Don't have bower?  install it with npm first.)
+run `bower install` to add the runtime dependencies. (Don't have bower?  install it with npm first.)
 
-Navigate to [http://localhost:8080/index.html](http://localhost:8080/index.html) and everything should be pretty
-self explanitory from there.
+Navigate to [http://localhost:8080/index.html](http://localhost:8080/index.html) and everything should be pretty self explanitory from there.

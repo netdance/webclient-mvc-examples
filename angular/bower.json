@@ -1,0 +1,22 @@
+{
+  "name": "Angular QED Sample App",
+  "version": "0.0.0",
+  "authors": [
+    "Jim Driscoll <jamesgdriscoll@gmail.com>"
+  ],
+  "description": "Sample Application I wrote to learn Angular",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1",
+    "bootstrap": "~3",
+    "jquery": "~1"
+  }
+}

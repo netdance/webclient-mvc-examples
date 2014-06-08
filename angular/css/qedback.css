@@ -1,0 +1,5 @@
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+/* needed for handling Bootstrap bug:  resized navbar overflow with dropdown button */
